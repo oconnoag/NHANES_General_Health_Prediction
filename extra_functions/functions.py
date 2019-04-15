@@ -21,3 +21,17 @@ def visualize(data, x, y):
     # Remove the extra plot that factorplot draws
     plt.close(2)
     plt.show()
+
+def kde_by_category(data, category, kde_column):
+    """
+    Plots a kde of a particular column of data (kde_column), but split by another column (category).
+    Both data must come from one Pandas DataFrame (data)
+    """
+    plt.figure(figsize=(14,4))
+    
+    cats = sorted(data[category].unique())
+    
+    for cat in cats:
+        sns.distplot(data[data[category]==cat][kde_column], hist=False, label=cat)
+        
+    plt.title('KDE of ' + kde_column + ' split by ' + category + ' levels')
