@@ -21,6 +21,22 @@ def visualize(data, x, y):
     # Remove the extra plot that factorplot draws
     plt.close(2)
     plt.show()
+    
+def visualize_categorical(data, x, y):
+    """
+	Visualize the relationship of two variables (x and y) in a dataset.
+	- Barplot
+	- Violinplot
+    """
+
+    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(14,5))
+    sns.factorplot(x=x, y=y, data=data, kind='bar', ax=axes[0], sharex=False, sharey=False, legend=False)
+    sns.violinplot(x=x, y=y, data=data, ax=axes[1])
+    
+    # Remove the extra plot that factorplot draws
+    plt.close(2)
+    plt.show()
+
 
 def kde_by_category(data, category, kde_column):
     """
