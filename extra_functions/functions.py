@@ -4,6 +4,28 @@ import seaborn as sns
 import numpy as np
 import sklearn
 
+def general_health_reclasser(x):
+    """
+    Used to reclassify the original levels of general health in the NHANES Data:
+    
+    Levels 1-2: 1
+             3: 2
+           4-5: 3
+           nan: nan
+           
+    """
+    if (x == 1 or x == 2):
+        return 1
+    
+    if (x == 3):
+        return 2
+
+    if (x == 4 or x == 5):
+        return 3
+
+    # Keeps nans
+    return x
+
 def visualize(data, x, y):
     """
 	Visualize the relationship of two variables (x and y) in a dataset.
@@ -65,3 +87,5 @@ def print_metrics(model, x_test, y_test, y_pred):
     print("\n----------------------------------------------------------------\n")
     print("Classification Report: \n")
     print(sklearn.metrics.classification_report(y_test, y_pred))
+    
+   
