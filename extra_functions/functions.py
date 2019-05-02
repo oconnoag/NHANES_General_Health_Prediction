@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import sklearn
 
 def visualize(data, x, y):
     """
@@ -51,3 +52,16 @@ def kde_by_category(data, category, kde_column):
         sns.distplot(data[data[category]==cat][kde_column], hist=False, label=cat)
         
     plt.title('KDE of ' + kde_column + ' split by ' + category + ' levels')
+    
+def print_metrics(model, x_test, y_test, y_pred):
+    """
+    Prints the score of the model, the confusion matrix, and the classification report.
+    """
+    print("Score of the model is", model.score(x_test, y_test))
+
+    print()
+    print("Confusion Matrix: \n")
+    print(sklearn.metrics.confusion_matrix(y_test, y_pred))
+    print("\n----------------------------------------------------------------\n")
+    print("Classification Report: \n")
+    print(sklearn.metrics.classification_report(y_test, y_pred))
