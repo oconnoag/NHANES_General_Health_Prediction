@@ -1,8 +1,8 @@
-# II. Introduction
+# Introduction
 
 Assessing subjective feelings (e.g. general health, quality of life, etc) has been an important task in medicine for as long as the profession has existed.  Considering that a core goal in medicine seeks to restore positive subjective perceptions and/or prevent negative subjective perceptions in the subjects, the salience of accurate measurements is not hard to overstate.  As with any subjective assessment, however, a number of biases can introduce a large amount of arbitrary variance to the measurements.  There have been several attempts to standardize measurements of subjective experience using various survey questions--one example is called the Nottingham Health Profile, an attempt to measure "quality of life" (Hunt, 1985).  To expand to the existing list of subjective-to-objective mapping, we are attempting to predict a particular subjective measurement ("General Health") from CDC health data by building statistical models with laboratory-based data, sociological-based data, and combined subsets of the two.  The general hypothesis for this project is given a certain set of information about a patient, we can determine/predict how they feel about their health (by classifying them into a corresponding category), without explicitly asking them.
 
-## II.a Data Description
+## Data Description
 
 #### NHANES Overview
 The data used in this study is compiled and propogated by the CDC under the program name National Health and Nutrition Examination Survey (which will herein be referred to as NHANES).  The NHANES program operates annually (though with different pools of participants) with the goal of assessing health and nutrition of the denizens of America.  The data produced by the program is unique because it utilizes biochemical laboratory-based methods, questionnaires, diet, external body measures, and demographics.  This abundance of data is attractive for statisticians and data scientists (or students of the fields, like us) for generating models for all sorts of different outcomes using a number of measurements (referred to as features in data science).
